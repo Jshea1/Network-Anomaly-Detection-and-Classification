@@ -1,9 +1,41 @@
 # Network-Anomaly-Detection-and-Classification
 
-This project aims to build a network anomaly detection and classification system using the UNSW-NB 15 dataset (https://www.kaggle.com/datasets/mrwellsdavid/unsw-nb15). The main idea is to analyze network traffic data to determine if the activity is normal or malicious. This dataset has labeled examples of different types of attacks and normal behavior, which makes it useful for applying pattern recognition methods.
+This project aims to build a network anomaly detection and classification system using the [UNSW-NB15 dataset](https://www.kaggle.com/datasets/mrwellsdavid/unsw-nb15). The goal is to analyze network traffic data and determine whether activity is normal or malicious.
 
-A notable aspect of this dataset is its lower “Usability Score,” which Kaggle uses to rate a dataset’s functionality. The data includes multiple instances of missing records, features, and similar issues. While this would normally rule out a dataset, it will be a good demonstration of our ability to clean and otherwise deal with missing & noisy data. 
+The dataset includes labeled examples of normal behavior and multiple attack categories, which makes it a strong fit for a pattern recognition project. It also includes messy, incomplete, and noisy data, so part of the project is demonstrating practical data cleaning and preprocessing.
 
-Our plan is to use Python libraries to preprocess the data, choose the most important features, and fill in missing elements. Then, we will apply a simple machine learning algorithm such as K-Nearest Neighbors or a Decision Tree to classify the traffic. To evaluate our system, we will use performance metrics such as accuracy, precision, and recall.
+The initial modeling plan is to:
 
-Overall, this project aims to show how pattern recognition can be applied to a real-world cybersecurity problem by building a simple and effective model for detecting network anomalies.
+1. Inspect and clean the raw data.
+2. Handle missing values and noisy records.
+3. Select useful features.
+4. Train a baseline classifier such as a Decision Tree or K-Nearest Neighbors model.
+5. Evaluate results with metrics such as accuracy, precision, recall, and F1-score.
+
+## Current Project Layout
+
+```text
+data/
+  raw/        Original Kaggle files
+  processed/  Derived artifacts and cleaned outputs
+notebooks/    Exploration notebooks
+reports/      Figures or written outputs
+src/          Reusable Python code
+```
+
+## Quick Start
+
+1. Create and activate a virtual environment.
+2. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Run the starter data profiling script:
+
+   ```powershell
+   $env:PYTHONPATH="src"; python -m network_anomaly_detection.profile_data
+   ```
+
+This writes a first-pass summary to `data/processed/data_profile.json`, which is a good place to start before building a classifier.
