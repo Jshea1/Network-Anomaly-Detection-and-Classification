@@ -1,0 +1,36 @@
+{
+  "binary_detection": {
+    "task": "binary_detection",
+    "metrics": {
+      "accuracy": 0.89,
+      "precision_weighted": 0.9128,
+      "recall_weighted": 0.89,
+      "f1_weighted": 0.893
+    },
+    "class_labels": [
+      0,
+      1
+    ]
+  },
+  "attack_classification": {
+    "task": "attack_classification",
+    "metrics": {
+      "accuracy": 0.7484,
+      "precision_weighted": 0.7958,
+      "recall_weighted": 0.7484,
+      "f1_weighted": 0.7477
+    },
+    "class_labels": [
+      "Analysis",
+      "Backdoor",
+      "DoS",
+      "Exploits",
+      "Fuzzers",
+      "Generic",
+      "Normal",
+      "Reconnaissance",
+      "Shellcode",
+      "Worms"
+    ]
+  }
+}
