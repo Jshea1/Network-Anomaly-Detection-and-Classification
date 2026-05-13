@@ -64,13 +64,13 @@ pip install -r requirements.txt
 Generate a dataset profile:
 
 ```powershell
-$env:PYTHONPATH="src"; python -m network_anomaly_detection.profile_data
+python -m network_anomaly_detection.profile_data
 ```
 
 Train the models and generate final artifacts:
 
 ```powershell
-$env:PYTHONPATH="src"; python -m network_anomaly_detection.train_models
+python -m network_anomaly_detection.train_models
 ```
 
 ## Output Files
@@ -88,7 +88,3 @@ Important generated outputs:
 - `reports/attack_classification_classification_report.txt`
 - `reports/figures/binary_detection_confusion_matrix.png`
 - `reports/figures/attack_classification_confusion_matrix.png`
-
-## Notes
-
-This is a baseline machine learning project rather than a heavily optimized cybersecurity system. It is designed to be understandable, reproducible, and appropriate for a class submission.
