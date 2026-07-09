@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import joblib
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -30,6 +31,7 @@ from network_anomaly_detection.data import (
 
 REPORTS_DIR = PROJECT_ROOT / "reports"
 FIGURES_DIR = REPORTS_DIR / "figures"
+MODELS_DIR = PROJECT_ROOT / "models"
 
 
 def build_preprocessor(x_train: pd.DataFrame) -> ColumnTransformer:
@@ -252,10 +254,16 @@ def train_and_evaluate(
             REPORTS_DIR / "binary_prediction_examples.md",
         )
 
+    MODELS_DIR.mkdir(parents=True, exist_ok=True)
+    model_path = MODELS_DIR / f"{task_name}_pipeline.joblib"
+    joblib.dump(model, model_path)
+
     return {
         "task": task_name,
         "metrics": metrics,
         "class_labels": labels,
+        "feature_columns": x_train.columns.tolist(),
+        "model_path": str(model_path.relative_to(PROJECT_ROOT)),
     }
 
 

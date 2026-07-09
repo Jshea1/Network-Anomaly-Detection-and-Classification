@@ -35,16 +35,6 @@ This project uses the UNSW-NB15 dataset to detect whether network traffic is nor
 - Text classification reports: `reports/*_classification_report.txt`
 - Confusion matrices: `reports/figures/*.png`
 
-## How to Run
-
-1. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   2. Open the notebook:
-   `AAI_646_Final_Project (1).ipynb`
-
-3. Run all cells sequentially.
-
-4. Generated reports and metrics will appear in the reports folder.
 ## Notes
+
 This is a simple baseline project rather than a highly tuned production system. It demonstrates a complete workflow: loading data, preprocessing, training, evaluation, and reporting.
