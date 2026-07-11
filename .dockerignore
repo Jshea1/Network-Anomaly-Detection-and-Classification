@@ -1,0 +1,10 @@
+.git
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+*.ipynb
+data/
+reports/
+scripts/
